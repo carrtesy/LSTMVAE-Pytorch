@@ -1,0 +1,24 @@
+program: main.py
+method: bayes
+name: NTMul_v1
+project: LSTMVAE-Pytorch
+entity: carrtesy
+metric:
+  name: summary
+  goal: minimize
+parameters:
+  lr:
+    min: 0.0001
+    max: 0.001
+  epochs:
+    value: 30
+  beta:
+    min: 0.0001
+    max: 0.1
+  dataset:
+    value: "NeurIPS-TS-MUL"
+
+early_terminate:
+  type: hyperband
+  max_iter: 100
+  s: 3
